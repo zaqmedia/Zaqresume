@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Abdurazak Gorja · Creative Director & Cinematographer</title>
+  
+  <!-- SF PRO DISPLAY FONTS (Embedded) -->
+  <style>
+    @font-face {
+      font-family: 'SF Pro Display';
+      src: local('SF Pro Display Regular'), local('SFProDisplay-Regular'),
+           url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sfprodisplay/sfprodisplay-regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'SF Pro Display';
+      src: local('SF Pro Display Medium'), local('SFProDisplay-Medium'),
+           url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sfprodisplay/sfprodisplay-medium.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'SF Pro Display';
+      src: local('SF Pro Display Bold'), local('SFProDisplay-Bold'),
+           url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sfprodisplay/sfprodisplay-bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'SF Pro Display';
+      src: local('SF Pro Display Thin Italic'), local('SFProDisplay-ThinItalic'),
+           url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sfprodisplay/sfprodisplay-thinitalic.woff2') format('woff2');
+      font-weight: 100;
+      font-style: italic;
+      font-display: swap;
+    }
+    
+    * {
+      font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    :root {
+      --bg-beige: #F5F0E8;
+      --bg-cream: #FEFCF8;
+      --card-cream: #FFFDF9;
+      --accent-darkgreen: #0B2B26;
+      --text-dark: #1F2A2E;
+      --text-soft: #4A5C5E;
+      --border-soft: #EAE3D7;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg-beige);
+      padding: 2rem 1.5rem;
+    }
+
+    .cv-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: var(--card-cream);
+      border-radius: 32px;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      border: 1px solid var(--border-soft);
+    }
+
+    .cv-grid {
+      display: grid;
+      grid-template-columns: 34% 66%;
+    }
+
+    /* LEFT PANEL */
+    .sidebar {
+      background: var(--bg-cream);
+      padding: 2rem 1.8rem;
+      border-right: 1px solid var(--border-soft);
+    }
+
+    .brand-header {
+      text-align: center;
+      margin-bottom: 1.8rem;
+    }
+
+    .logo-area {
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* NO BORDER, NO BACKGROUND RECTANGLE — clean logo container */
+    .logo-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: transparent;
+      border: none;
+      padding: 0;
+    }
+
+    .logo-box:hover {
+      opacity: 0.85;
+      transform: scale(1.01);
+    }
+
+    .logo-icon-display {
+      font-size: 2rem;
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.05));
+    }
+    
+    .logo-wordmark {
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: -0.3px;
+      color: var(--accent-darkgreen);
+    }
+    
+    .logo-sub {
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      color: #7A8B7A;
+      margin-top: 2px;
+    }
+    
+    .logo-text-group {
+      text-align: left;
+      line-height: 1.2;
+    }
+
+    .logo-image {
+      max-height: 65px;
+      width: auto;
+      max-width: 200px;
+      object-fit: contain;
+      display: block;
+      border-radius: 0;
+    }
+
+    /* Visually hidden helper class for screen readers / accessibility */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    .profile-photo {
+      margin: 0.5rem 0;
+      position: relative;
+    }
+
+    .photo-frame {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto;
+      background: #E8E0D4;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 3px solid var(--accent-darkgreen);
+      box-shadow: 0 10px 22px rgba(11, 43, 38, 0.12);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .photo-frame:hover {
+      transform: scale(1.02);
+      box-shadow: 0 14px 28px rgba(11, 43, 38, 0.18);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .avatar-fallback {
+      background: var(--accent-darkgreen);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: 500;
+      color: #F5F0E8;
+    }
+
+    .contact-info p {
+      margin-bottom: 0.7rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      color: var(--text-soft);
+    }
+
+    .contact-info i {
+      width: 1.4rem;
+      color: var(--accent-darkgreen);
+    }
+
+    .sidebar h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 2rem 0 1rem 0;
+      border-left: 4px solid var(--accent-darkgreen);
+      padding-left: 0.75rem;
+      color: var(--accent-darkgreen);
+    }
+
+    .skill-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-badge {
+      background: #F0EBE2;
+      padding: 0.3rem 0.9rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #2c3a2f;
+    }
+
+    .award-mini {
+      margin-bottom: 1.2rem;
+    }
+
+    .award-mini strong {
+      color: var(--accent-darkgreen);
+      font-weight: 700;
+      font-size: 0.85rem;
+      display: block;
+    }
+
+    .award-mini .year {
+      font-size: 0.68rem;
+      color: #7a6b58;
+    }
+
+    hr.divider {
+      margin: 1.2rem 0;
+      border: 0;
+      height: 1px;
+      background: var(--border-soft);
+    }
+
+    /* RIGHT PANEL */
+    .main-content {
+      padding: 2rem 2.2rem;
+      background: white;
+    }
+
+    .header-main {
+      margin-bottom: 1.8rem;
+      border-bottom: 2px solid var(--border-soft);
+      padding-bottom: 1rem;
+    }
+
+    .header-main h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--accent-darkgreen);
+    }
+
+    .title-tag {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #7D6E54;
+      margin-top: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+    }
+
+    .bio-summary {
+      background: var(--bg-beige);
+      padding: 1rem 1.2rem;
+      border-radius: 20px;
+      margin-bottom: 2rem;
+      border-left: 5px solid var(--accent-darkgreen);
+      font-size: 0.92rem;
+      color: #2c3e2f;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent-darkgreen);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .job {
+      margin-bottom: 1.6rem;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    .job-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--accent-darkgreen);
+    }
+
+    .company {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: #9b8a70;
+    }
+
+    .date {
+      font-size: 0.7rem;
+      color: #9eae9a;
+    }
+
+    .job-description ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.5rem;
+    }
+
+    .job-description li {
+      margin-bottom: 0.5rem;
+      font-size: 0.85rem;
+      position: relative;
+      padding-left: 1.2rem;
+    }
+
+    .job-description li:before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--accent-darkgreen);
+    }
+
+    .award-card {
+      background: var(--bg-beige);
+      border-radius: 18px;
+      padding: 0.9rem 1.1rem;
+      margin-bottom: 1rem;
+      border: 1px solid var(--border-soft);
+    }
+
+    .award-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--accent-darkgreen);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .award-link a {
+      font-size: 0.7rem;
+      color: var(--accent-darkgreen);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--accent-darkgreen);
+    }
+
+    .portfolio-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    .social-icon {
+      background: var(--bg-beige);
+      padding: 0.4rem 1.1rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent-darkgreen);
+      text-decoration: none;
+      border: 1px solid var(--border-soft);
+      transition: all 0.2s;
+    }
+
+    .social-icon:hover {
+      background: var(--accent-darkgreen);
+      color: var(--bg-beige);
+    }
+
+    .social-icon:hover i {
+      color: var(--bg-beige);
+    }
+
+    .cv-footer {
+      text-align: center;
+      font-size: 0.7rem;
+      color: var(--accent-darkgreen);
+      padding: 1rem 0 0.5rem;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    @media (max-width: 750px) {
+      .cv-grid {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border-soft);
+      }
+      .header-main h1 {
+        font-size: 1.9rem;
+      }
+      .logo-wordmark {
+        font-size: 1.2rem;
+      }
+      .logo-icon-display {
+        font-size: 1.6rem;
+      }
+    }
+
+    .thin-italic {
+      font-weight: 100;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+<div class="cv-container">
+  <div class="cv-grid">
+    <!-- LEFT COLUMN -->
+    <aside class="sidebar">
+      <div class="brand-header">
+        <div class="logo-area">
+          <!-- NO BORDER, NO BACKGROUND RECTANGLE — completely clean -->
+          <div class="logo-box" id="logoUploadTrigger" title="Double-click to upload your logo (PNG/JPG)" aria-label="Double-click to upload your ZAQ Media & Communication logo">
+            <div id="logoDisplayDefault">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span class="logo-icon-display">🎬</span>
+                <div class="logo-text-group">
+                  <div class="logo-wordmark">ZAQ MEDIA</div>
+                  <div class="logo-sub">& COMMUNICATION</div>
+                </div>
+              </div>
+            </div>
+            <img id="zaqLogoImg" class="logo-image" src="" alt="Uploaded Logo" style="display: none;">
+          </div>
+          <!-- Visually hidden instruction for screen readers (accessibility) -->
+          <span class="visually-hidden">Double-click the logo area to upload your own logo image</span>
+        </div>
+        
+        <div class="profile-photo">
+          <div class="photo-frame" id="profilePhotoContainer" title="Click to upload profile photo" aria-label="Click to upload your profile photo">
+            <img id="userProfileImg" src="" alt="Profile" style="display: none;">
+            <div id="fallbackAvatar" class="avatar-fallback">AG</div>
+          </div>
+          <!-- Visually hidden instruction for screen readers -->
+          <span class="visually-hidden">Click the profile photo to upload your picture</span>
+        </div>
+      </div>
+
+      <div class="contact-info">
+        <h2>Contact</h2>
+        <p><i class="fas fa-phone-alt"></i> +251 921 945 331</p>
+        <p><i class="fas fa-envelope"></i> abdurazaqgorja@gmail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</p>
+        <p><i class="fab fa-upwork"></i> Upwork Freelance</p>
+        <p><i class="fab fa-linkedin"></i> linkedin.com/in/abdurazaq-gorja</p>
+      </div>
+
+      <hr class="divider">
+
+      <div>
+        <h2>Core Competencies</h2>
+        <div class="skill-cloud">
+          <span class="skill-badge">Videography</span>
+          <span class="skill-badge">Video Editing</span>
+          <span class="skill-badge">Film Making</span>
+          <span class="skill-badge">Storytelling</span>
+          <span class="skill-badge">Color Correction</span>
+          <span class="skill-badge">Sound Design</span>
+          <span class="skill-badge">DaVinci Resolve</span>
+          <span class="skill-badge">Adobe Premiere Pro</span>
+          <span class="skill-badge">Production Planning</span>
+          <span class="skill-badge">Project Management</span>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <div>
+        <h2>Awards Spotlight</h2>
+        <div class="award-mini">
+          <strong>🏆 TikTok Short Movie of the Year</strong>
+          <div class="year">2025 · 1st Place (Ethiopia)</div>
+          <div class="thin-italic" style="font-size:0.7rem;">DP & Editor, national win</div>
+        </div>
+        <div class="award-mini">
+          <strong>🏆 TikTok Short Movie of the Year</strong>
+          <div class="year">2024 · 1st Place</div>
+          <div class="thin-italic" style="font-size:0.7rem;">Two-time winner — rare feat</div>
+        </div>
+        <div class="award-mini">
+          <strong>🥈 Short Movie Challenge</strong>
+          <div class="year">2025 · 2nd Runner Up</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT COLUMN -->
+    <main class="main-content">
+      <div class="header-main">
+        <h1>ABDURAZAK GORJA</h1>
+        <div class="title-tag">
+          <i class="fas fa-video"></i> Creative Director · Cinematographer · Video Editor
+          <span style="font-size:0.7rem; background:var(--bg-beige); padding:2px 10px; border-radius:40px; color:var(--accent-darkgreen);">6+ years experience</span>
+        </div>
+      </div>
+
+      <div class="bio-summary">
+        <i class="fas fa-quote-left" style="color:var(--accent-darkgreen); margin-right:6px;"></i> 
+        Award-winning storyteller with 6+ years turning raw footage into cinematic, platform-optimized content. Two-time TikTok Short Movie of the Year (Ethiopia). Leads end-to-end production — from concept to color grade — with a signature style that drives audience engagement.
+      </div>
+
+      <div class="section">
+        <h3><i class="fas fa-briefcase"></i> Professional Experience</h3>
+        
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Creative Director</span>
+            <span class="date">Feb 2024 – Present</span>
+          </div>
+          <div class="company">ZAQ Media and Communication · Addis Ababa, Ethiopia</div>
+          <div class="job-description">
+            <ul>
+              <li>Architected creative vision for 8+ brand campaigns, attracting three major corporate clients within 12 months.</li>
+              <li>Reduced revision cycles by ~40% through upfront concept alignment.</li>
+              <li>Directed full production pipelines — coordinating shooters, editors, and post-production specialists.</li>
+              <li>Championed storytelling-first editing, driving higher average watch-time.</li>
+              <li>Mentored editors and cinematographers, shortening onboarding time by 30%.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Freelance Video Editor</span>
+            <span class="date">Jan 2025 – Apr 2026</span>
+          </div>
+          <div class="company">Upwork · Remote</div>
+          <div class="job-description">
+            <ul>
+              <li>Delivered short-form and long-form edits for international clients.</li>
+              <li>Optimized content for Instagram, TikTok, LinkedIn, YouTube Shorts, increasing engagement.</li>
+              <li>Managed full post-production workflows — editing, color grading, audio cleanup.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Senior Production Manager</span>
+            <span class="date">Jan 2020 – Jul 2024</span>
+          </div>
+          <div class="company">Krinfud Digitals · Addis Ababa, Ethiopia</div>
+          <div class="job-description">
+            <ul>
+              <li>Spearheaded camera operations for 30+ corporate videos and events.</li>
+              <li>Streamlined workflows, cutting project turnaround by 25%.</li>
+              <li>Drove projects from pre-production through final delivery.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3><i class="fas fa-trophy"></i> Awards & Achievements</h3>
+        
+        <div class="award-card">
+          <div class="award-title">
+            🏆 TikTok Short Movie of the Year — 1st Place 
+            <span class="award-link"><a href="https://vimeo.com/1191829883" target="_blank"><i class="fab fa-vimeo"></i> Watch on Vimeo</a></span>
+          </div>
+          <div class="thin-italic" style="font-size:0.75rem; color:#6f6b5e;">2025 · Winner</div>
+          <p style="font-size:0.8rem; margin-top:6px;">Director of Photography and Editor. Recognized nationally for cinematic storytelling.</p>
+        </div>
+
+        <div class="award-card">
+          <div class="award-title">
+            🏆 TikTok Short Movie of the Year — 1st Place 
+            <span class="award-link"><a href="https://vimeo.com/1098990717" target="_blank"><i class="fab fa-vimeo"></i> Watch on Vimeo</a></span>
+          </div>
+          <div class="thin-italic" style="font-size:0.75rem; color:#6f6b5e;">2024 · Winner</div>
+          <p style="font-size:0.8rem; margin-top:6px;">Two-time consecutive winner — a rare feat.</p>
+        </div>
+
+        <div class="award-card">
+          <div class="award-title">
+            🥈 Short Movie Challenge — 2nd Runner Up
+            <span class="award-link"><a href="https://vimeo.com/1145797184" target="_blank"><i class="fab fa-vimeo"></i> Watch on Vimeo</a></span>
+          </div>
+          <div class="thin-italic" style="font-size:0.75rem; color:#6f6b5e;">2025 · Runner Up</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+        <div style="margin-bottom: 0.5rem;">
+          <div style="font-weight:700;">Bachelor of Science — Construction Technology and Management</div>
+          <div class="thin-italic" style="font-size:0.85rem;">EiABC · 2018</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3><i class="fas fa-globe"></i> Portfolio & Online Presence</h3>
+        <div class="portfolio-links">
+          <a href="https://abdurazaq.carrd.co/" target="_blank" class="social-icon"><i class="fas fa-folder-open"></i> Portfolio</a>
+          <a href="https://zaqstudio.github.io/" target="_blank" class="social-icon"><i class="fas fa-globe"></i> Website</a>
+          <a href="https://www.linkedin.com/in/abdurazaq-gorja-957235115" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://www.instagram.com/zaqgraphy/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i> Instagram</a>
+          <a href="https://www.tiktok.com/@zaqgraphy" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i> TikTok</a>
+        </div>
+        <p style="font-size:0.8rem; margin-top: 10px; color: #5d6957;">Brand campaigns, founder-led videos, social ads, and cinematic mini-documentaries.</p>
+      </div>
+    </main>
+  </div>
+  <div class="cv-footer">
+    ✦ Abdurazak Gorja · Creative Director & Cinematographer ✦ <span class="thin-italic">— story-driven precision —</span>
+  </div>
+</div>
+
+<script>
+  // PROFILE PHOTO UPLOAD (click on photo frame)
+  const profileContainer = document.getElementById('profilePhotoContainer');
+  const profileImg = document.getElementById('userProfileImg');
+  const fallbackDiv = document.getElementById('fallbackAvatar');
+
+  function setProfileImage(file) {
+    if (file && file.type.startsWith('image/')) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        profileImg.src = e.target.result;
+        profileImg.style.display = 'block';
+        fallbackDiv.style.display = 'none';
+        localStorage.setItem('profilePhotoData', e.target.result);
+      };
+      reader.readAsDataURL(file);
+    } else {
+      alert("Please select a valid image (JPG, PNG).");
+    }
+  }
+
+  const savedPhoto = localStorage.getItem('profilePhotoData');
+  if (savedPhoto) {
+    profileImg.src = savedPhoto;
+    profileImg.style.display = 'block';
+    fallbackDiv.style.display = 'none';
+  }
+
+  profileContainer.addEventListener('click', () => {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
+    input.onchange = (e) => {
+      if (input.files && input.files[0]) setProfileImage(input.files[0]);
+    };
+    input.click();
+  });
+
+  // LOGO UPLOAD/REPLACE (double-click on logo container) - borderless, no rectangle
+  const logoTrigger = document.getElementById('logoUploadTrigger');
+  const logoImg = document.getElementById('zaqLogoImg');
+  const logoDefault = document.getElementById('logoDisplayDefault');
+
+  if (logoTrigger) {
+    logoTrigger.addEventListener('dblclick', () => {
+      const logoInput = document.createElement('input');
+      logoInput.type = 'file';
+      logoInput.accept = 'image/png, image/jpeg, image/svg+xml';
+      logoInput.onchange = (ev) => {
+        const file = logoInput.files[0];
+        if (file && file.type.startsWith('image/')) {
+          const readerLogo = new FileReader();
+          readerLogo.onload = function(e) {
+            if (logoDefault) logoDefault.style.display = 'none';
+            logoImg.src = e.target.result;
+            logoImg.style.display = 'block';
+            localStorage.setItem('zaqMediaLogoData', e.target.result);
+          };
+          readerLogo.readAsDataURL(file);
+        } else {
+          alert('Please upload a valid logo image (PNG, JPG).');
+        }
+      };
+      logoInput.click();
+    });
+  }
+
+  // Load saved logo from localStorage
+  const savedLogoData = localStorage.getItem('zaqMediaLogoData');
+  if (savedLogoData && logoImg && logoDefault) {
+    logoDefault.style.display = 'none';
+    logoImg.src = savedLogoData;
+    logoImg.style.display = 'block';
+  }
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</body>
+</html>
